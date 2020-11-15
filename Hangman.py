@@ -1,5 +1,5 @@
 import random #used to generate words randomly
-
+#from PIL import Image
 #import appropriate files
 from Movies import movies
 from hangman_words import words
@@ -80,12 +80,70 @@ else:
              elif '_' not in hang_man:
                  break
 
+                 #displays hangman
+             if (lives == 6):
+                 print("\t--------" +
+                       "\n\t|      |" +
+                       "\n\t|" +
+                       "\n\t|" +
+                       "\n\t|" +
+                       "\n\t|" +
+                       "\n\t---")
+             elif (lives == 5):
+                 print("\t--------" +
+                       "\n\t|      |" +
+                       "\n\t|      O" +
+                       "\n\t|" +
+                       "\n\t|" +
+                       "\n\t|" +
+                       "\n\t---")
+
+             elif (lives == 4):
+                 print("\t--------" +
+                       "\n\t|      |" +
+                       "\n\t|      O" +
+                       "\n\t|      |" +
+                       "\n\t|      |" +
+                       "\n\t|" +
+                       "\n\t---")
+             elif (lives == 3):
+                 print("\t--------" +
+                       "\n\t|      |" +
+                       "\n\t|      O" +
+                       "\n\t|     \\|" +
+                       "\n\t|      |" +
+                       "\n\t|     " +
+                       "\n\t---")
+
+             elif (lives == 2):
+                 print("\t--------" +
+                       "\n\t|      |" +
+                       "\n\t|      O" +
+                       "\n\t|     \\|/" +
+                       "\n\t|      |" +
+                       "\n\t|     " +
+                       "\n\t---")
+             else:
+                 print("\t--------" +
+                       "\n\t|      |" +
+                       "\n\t|      O" +
+                       "\n\t|     \\|/" +
+                       "\n\t|      |" +
+                       "\n\t|     /" +
+                       "\n\t---")
              print("You have ", lives, " lives left.")
-   #Display message if user lost
+
+   #Display message if user lost along with finished hang man
     if lives == 0:
+        print("\t--------" +
+              "\n\t|      |" +
+              "\n\t|      O" +
+              "\n\t|     \\|/" +
+              "\n\t|      |" +
+              "\n\t|     / \\" +
+              "\n\t---")
         print("You are out of lives. You Lose! The correct word was: " + word_generated)
 
     #Display message if user won
     else:
         print("You win! The answer was " + word_generated)
-
